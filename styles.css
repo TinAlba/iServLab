@@ -1,0 +1,706 @@
+/* =========================================
+   1. VARIABLES DE DISEÑO (ESTILO APPLE)
+   ========================================= */
+:root {
+    --color-black: #000000;
+    --color-apple-dark: #1d1d1f; /* Negro suave típico del texto de Apple */
+    --color-apple-bg: #f5f5f7; /* Fondo gris casi blanco de Apple */
+    --color-white: #ffffff;
+    --color-white-translucent: rgba(255, 255, 255, 0.7);
+    --color-hover-bg: rgba(0, 0, 0, 0.06);
+    
+    --font-primary: 'Roboto', sans-serif;
+    
+    /* Curva de animación suave y fluida (Apple style) */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* =========================================
+   2. RESET & NORMALIZACIÓN
+   ========================================= */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased; /* Suavizado de fuentes en macOS/iOS */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-apple-bg);
+    color: var(--color-apple-dark);
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   3. ANIMACIONES (MINIMALISTAS)
+   ========================================= */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   4. ENCABEZADO (HEADER) ESTILO MAC
+   ========================================= */
+.site-header {
+    /* Efecto Glassmorphism (desenfoque del fondo) */
+    background-color: var(--color-white-translucent);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Línea divisoria muy sutil */
+    padding: 1rem 2.5rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separa el logo de los links */
+    
+    /* Mantiene el header siempre arriba */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+    /* Animación de entrada */
+    animation: fadeSlideIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* LOGO */
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-black);
+    letter-spacing: -0.5px;
+    user-select: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.7;
+}
+
+/* =========================================
+   5. NAVEGACIÓN Y BOTONES
+   ========================================= */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espaciado entre botones */
+}
+
+/* Enlace simple estilo iPadOS */
+.nav-link {
+    text-decoration: none;
+    color: var(--color-apple-dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 980px; /* Forma de píldora redondeada */
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover {
+    background-color: var(--color-hover-bg);
+    color: var(--color-black);
+}
+
+/* Botón de acción (ej. Contacto) con estilo sólido negro */
+.nav-link.btn-action {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    margin-left: 0.5rem;
+}
+
+.nav-link.btn-action:hover {
+    background-color: #333333;
+    transform: scale(1.03); /* Ligero aumento al pasar el ratón */
+}
+
+/* =========================================
+   6. CONTENIDO PRINCIPAL (MAIN)
+   ========================================= */
+.site-main {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* =========================================
+   7. PIE DE PÁGINA (FOOTER) ESTILO APPLE
+   ========================================= */
+.site-footer {
+    background-color: var(--color-black);
+    color: #86868b; /* Gris característico de Apple para fondos oscuros */
+    padding: 3rem 2.5rem 1.5rem; /* Espaciado generoso */
+    width: 100%;
+    font-size: 0.85rem;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* --- Parte Superior del Footer --- */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Para que se adapte a móviles */
+    gap: 2rem;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-white);
+    letter-spacing: -0.3px;
+    margin-bottom: 0.8rem;
+}
+
+.footer-tagline {
+    line-height: 1.5;
+}
+
+/* --- Redes Sociales --- */
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #86868b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+
+/* Efecto hover: el texto y el ícono se iluminan a blanco suave */
+.social-link:hover {
+    color: var(--color-white);
+    transform: translateX(5px); /* Pequeño desplazamiento a la derecha */
+}
+
+/* --- Parte Inferior (Legal y Copyright) --- */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Línea divisoria súper sutil */
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    color: #86868b;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-legal a:hover {
+    color: var(--color-white);
+    text-decoration: underline;
+}
+
+/* =========================================
+   8. RESPONSIVE DESIGN (MÓVILES)
+   ========================================= */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .nav-links {
+        display: none; /* Aquí iría un menú hamburguesa en el futuro */
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* =========================================
+   9. PÁGINA DE INICIO (INDEX)
+   ========================================= */
+
+/* --- Hero Section --- */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 60vh; /* Ocupa buena parte de la pantalla */
+    padding: 4rem 2rem;
+    animation: fadeSlideIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem); /* Se adapta al tamaño de la pantalla */
+    font-weight: 700;
+    color: var(--color-black);
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: #515154; /* Gris típico de subtítulos de Apple */
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+}
+
+/* --- Botones del Hero --- */
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* En móviles se pondrán uno debajo de otro si no caben */
+}
+
+.btn {
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 980px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: #333333;
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-secondary:hover {
+    color: #515154;
+}
+
+.btn-secondary .arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-secondary:hover .arrow {
+    transform: translateX(4px); /* La flechita se mueve al hacer hover */
+}
+
+/* --- Sección de Características (Pilares) --- */
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto 4rem auto;
+    padding: 0 2rem;
+    
+    /* Pequeña animación de entrada con retraso */
+    opacity: 0;
+    animation: fadeSlideIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+
+.feature-card {
+    background-color: var(--color-white);
+    padding: 2.5rem 2rem;
+    border-radius: 24px; /* Bordes suaves estilo iOS */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* Sombra súper difuminada */
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px); /* Se eleva un poco al pasar el ratón */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+.feature-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--color-black);
+    margin-bottom: 1.5rem;
+}
+
+.feature-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--color-black);
+}
+
+.feature-text {
+    font-size: 0.95rem;
+    color: #515154;
+    line-height: 1.6;
+}
+
+/* =========================================
+   10. PÁGINA DE CONTACTO
+   ========================================= */
+
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.contact-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeSlideIn 0.8s ease forwards;
+}
+
+.contact-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+    color: #515154;
+    font-size: 1.1rem;
+}
+
+/* El Recuadro de WhatsApp */
+.whatsapp-box-container {
+    width: 100%;
+    max-width: 500px;
+    animation: fadeSlideIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+    opacity: 0;
+}
+
+.whatsapp-card {
+    background-color: var(--color-white);
+    padding: 3rem 2rem;
+    border-radius: 28px; /* Borde muy redondeado estilo Apple */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+
+.whatsapp-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.wa-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #f5f5f7;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: #25D366; /* Verde oficial de WhatsApp */
+}
+
+.wa-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.whatsapp-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.whatsapp-card p {
+    color: #86868b;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+/* El botón de WhatsApp */
+.wa-button {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 980px;
+    font-weight: 500;
+    width: 100%;
+    transition: var(--transition-smooth);
+}
+
+.wa-button:hover {
+    background-color: #333333;
+    transform: scale(1.02);
+}
+
+.wa-availability {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #a1a1a6;
+    display: block;
+}
+
+/* =========================================
+   11. PÁGINA DE SERVICIOS
+   ========================================= */
+
+.services-header {
+    text-align: center;
+    padding: 3rem 1rem;
+    animation: fadeSlideIn 0.8s ease;
+}
+
+.services-title {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.services-grid {
+    display: grid;
+    /* Esto crea columnas automáticamente: 3 columnas en PC, 2 en tablets, 1 en móvil */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem;
+    max-width: 1200px; /* Aumentamos el ancho para que quepan 3 tarjetas por fila */
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+}
+
+.service-detail-card {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+/* Ajuste para que las listas no se vean tan apretadas */
+.service-specs li {
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f5f5f7;
+}
+
+.highlight-card {
+    border: 1px solid rgba(0,0,0,0.05);
+    background: linear-gradient(145deg, #ffffff, #f9f9fb);
+}
+
+.service-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #86868b;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.service-name {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.service-description {
+    color: #515154;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.service-specs {
+    list-style: none;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.service-specs li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f5f5f7;
+    font-size: 0.95rem;
+    color: var(--color-apple-dark);
+}
+
+.service-price-tag {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-black);
+    margin-top: 1rem;
+}
+
+.service-price {
+    font-size: 0.9rem;
+    color: #86868b;
+    font-weight: 500;
+}
+
+/* Banner de Entrega */
+.delivery-info {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 2rem;
+    background-color: #f5f5f7;
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.info-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: #1d1d1f;
+}
+
+.info-icon {
+    width: 32px;
+    color: #86868b;
+    flex-shrink: 0;
+}
+
+/* Sección de contacto final */
+.services-cta {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: var(--color-white);
+}
+
+.services-cta p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.cta-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .services-title { font-size: 2.2rem; }
+    .info-content { flex-direction: column; text-align: center; }
+}
+
+/* =========================================
+   12. PÁGINA DE PRODUCTOS (EMPTY STATE)
+   ========================================= */
+
+.empty-state-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    background-color: var(--color-apple-bg);
+}
+
+.empty-container {
+    max-width: 600px;
+    text-align: center;
+    animation: fadeSlideIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.empty-icon-wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.empty-svg {
+    width: 100px;
+    height: 100px;
+    color: #d2d2d7; /* Gris sutil de Apple */
+}
+
+.empty-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--color-black);
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+.empty-subtitle {
+    font-size: 1.15rem;
+    color: #515154;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+.empty-subtitle strong {
+    color: var(--color-black);
+    font-weight: 500;
+}
+
+.empty-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Ajuste responsivo para los botones del empty state */
+@media (min-width: 600px) {
+    .empty-actions {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+}

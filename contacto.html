@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Seguridad -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; script-src 'self';">
+    <meta name="referrer" content="no-referrer">
+    
+    <title>Contacto | iServLab</title>
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado (Igual al Index) -->
+    <header class="site-header">
+        <div class="logo">iServLab</div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="servicios.html" class="nav-link">Servicios</a>
+            <a href="productos.html" class="nav-link">Productos</a>
+            <a href="contacto.html" class="nav-link btn-action">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="site-main contact-page">
+        
+        <section class="contact-hero">
+            <h1 class="contact-title">Estamos para ayudarte.</h1>
+            <p class="contact-subtitle">Consulta por tu reparación o accesorio de forma directa y personalizada.</p>
+        </section>
+
+        <!-- Recuadro de Cotización WhatsApp -->
+        <section class="whatsapp-box-container">
+            <div class="whatsapp-card">
+                <div class="wa-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                </div>
+                <h2>Cotiza tu arreglo</h2>
+                <p>Escríbenos detallando el modelo de tu iPhone y el problema que presenta. Te responderemos a la brevedad.</p>
+                
+                <!-- Reemplaza el número 123456789 por el tuyo -->
+                <a href="https://wa.me/5491132649187?text=Hola%20iServLab,%20me%20gustaría%20cotizar%20una%20reparación%20para%20mi%20iPhone." 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="wa-button">
+                    Iniciar consulta por WhatsApp
+                </a>
+                
+                <span class="wa-availability">Respuesta inmediata • Lun a Vie</span>
+            </div>
+        </section>
+
+    </main>
+
+   <!-- Pie de Página -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <!-- Parte Superior del Footer -->
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">iServLab</div>
+                    <p class="footer-tagline">Soluciones tecnológicas a tu medida. Innovación y servicio al siguiente nivel.</p>
+                </div>
+                
+                <!-- Enlaces de Contacto / Redes -->
+                <div class="footer-social">
+                    <a href="https://wa.me/5491132649187" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                        <span>WhatsApp</span>
+                    </a>
+                    
+                    <a href="https://instagram.com/iservlab.hur" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Parte Inferior del Footer (Legal y Copyright) -->
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 iServLab. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos de Uso</a>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+</body>
+</html>

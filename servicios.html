@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Seguridad -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; script-src 'self';">
+    <meta name="referrer" content="no-referrer">
+    
+    <title>Servicios | iServLab</title>
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="site-header">
+        <div class="logo">iServLab</div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="servicios.html" class="nav-link">Servicios</a>
+            <a href="productos.html" class="nav-link">Productos</a>
+            <a href="contacto.html" class="nav-link btn-action">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="site-main">
+        
+        <section class="services-header">
+            <h1 class="services-title">Soluciones Especializadas</h1>
+            <p class="services-subtitle">Reparaciones de alta precisión para que tu iPhone vuelva a ser el de siempre.</p>
+        </section>
+
+        <section class="services-grid">
+            
+            <!-- Tarjeta 1: Baterías -->
+            <div class="service-detail-card">
+                <div class="service-badge">Energía</div>
+                <h2 class="service-name">Cambio de Batería</h2>
+                <p class="service-description">Restauramos la autonomía original con celdas de alta densidad.</p>
+                <ul class="service-specs">
+                    <li>Con o sin trasplante de flex (según preferencia).</li>
+                    <li>Marcas: <strong>Ampsentrix</strong> o <strong>Foxconn</strong>.</li>
+                    <li>Sin avisos de "Pieza desconocida" (opcional).</li>
+                </ul>
+                <div class="service-price">Consultar modelo</div>
+            </div>
+
+            <!-- Tarjeta 2: Pantallas -->
+            <div class="service-detail-card">
+                <div class="service-badge">Display</div>
+                <h2 class="service-name">Pantallas y Cristales</h2>
+                <p class="service-description">Cambio de módulos completos o solo cristal si el táctil funciona.</p>
+                <ul class="service-specs">
+                    <li>Calidad <strong>OLED Original</strong> o Incell Premium.</li>
+                    <li>Programación de <strong>True Tone</strong> incluida.</li>
+                    <li>Sellado contra polvo y humedad.</li>
+                </ul>
+                <div class="service-price">Consultar modelo</div>
+            </div>
+
+            <!-- Tarjeta 3: Cámaras -->
+            <div class="service-detail-card">
+                <div class="service-badge">Óptica</div>
+                <h2 class="service-name">Reparación de Cámaras</h2>
+                <p class="service-description">Solución a problemas de enfoque, manchas o vidrios rotos.</p>
+                <ul class="service-specs">
+                    <li>Reemplazo de lentes de zafiro externos.</li>
+                    <li>Cambio de módulos de cámara trasera y frontal.</li>
+                    <li>Limpieza interna de sensores.</li>
+                </ul>
+                <div class="service-price">Consultar modelo</div>
+            </div>
+
+            <!-- Tarjeta 4: Diagnóstico (Destacada) -->
+            <div class="service-detail-card highlight-card">
+                <div class="service-badge">Técnico</div>
+                <h2 class="service-name">Diagnóstico de Falla</h2>
+                <p class="service-description">Análisis avanzado para equipos que no encienden o tienen fallas intermitentes.</p>
+                <ul class="service-specs">
+                    <li>Revisión por micro-soldadura.</li>
+                    <li>Detección de cortos en placa base.</li>
+                    <li>Presupuesto sin compromiso posterior.</li>
+                </ul>
+                <div class="service-price-tag">$25.000</div>
+            </div>
+
+            <!-- Tarjeta 5: Tapa Trasera -->
+            <div class="service-detail-card">
+                <div class="service-badge">Estética</div>
+                <h2 class="service-name">Vidrio Trasero</h2>
+                <p class="service-description">Cambiamos el vidrio roto de la parte posterior de tu iPhone.</p>
+                <ul class="service-specs">
+                    <li>Remoción por <strong>Tecnología Láser</strong>.</li>
+                    <li>No requiere abrir el equipo (en modelos aptos).</li>
+                    <li>Acabado idéntico al original.</li>
+                </ul>
+                <div class="service-price">Consultar modelo</div>
+            </div>
+
+            <!-- Tarjeta 6: Otros Servicios -->
+            <div class="service-detail-card">
+                <div class="service-badge">Más</div>
+                <h2 class="service-name">Reparaciones Varias</h2>
+                <p class="service-description">Cubrimos cualquier necesidad técnica de tu ecosistema Apple.</p>
+                <ul class="service-specs">
+                    <li>Puerto de carga y Micrófonos.</li>
+                    <li>Reparación de <strong>Face ID</strong>.</li>
+                    <li>Recuperación por daño por agua.</li>
+                </ul>
+                <div class="service-price">Presupuesto en el acto</div>
+            </div>
+
+        </section>
+
+        <!-- Banner de Tiempo de Entrega -->
+        <section class="delivery-info">
+            <div class="info-content">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="info-icon">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <p>La demora estimada de un servicio es de <strong>1 a 5 días hábiles</strong>, según la complejidad.</p>
+            </div>
+        </section>
+
+        <!-- Botones de Contacto -->
+        <section class="services-cta">
+            <p>¿Tu iPhone necesita atención?</p>
+            <div class="cta-group">
+                <a href="https://wa.me/5491132649187" class="btn btn-primary">Cotizar por WhatsApp</a>
+            </div>
+        </section>
+
+    </main>
+
+   <!-- Pie de Página -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <!-- Parte Superior del Footer -->
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">iServLab</div>
+                    <p class="footer-tagline">Soluciones tecnológicas a tu medida. Innovación y servicio al siguiente nivel.</p>
+                </div>
+                
+                <!-- Enlaces de Contacto / Redes -->
+                <div class="footer-social">
+                    <a href="https://wa.me/5491132649187" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                        <span>WhatsApp</span>
+                    </a>
+                    
+                    <a href="https://instagram.com/iservlab.hur" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Parte Inferior del Footer (Legal y Copyright) -->
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 iServLab. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos de Uso</a>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+</body>
+</html>
